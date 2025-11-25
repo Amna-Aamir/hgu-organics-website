@@ -94,7 +94,7 @@
     .contact-card input,.contact-card textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:var(--white);color:rgba(100,36,47,0.6);margin-bottom:12px}
     .contact-card input::placeholder,.contact-card textarea::placeholder{color:rgba(100,36,47,0.38)}
     /* highlighted phone number style for contact section */
-    .highlight-phone{color:var(--accent);font-weight:800;font-size:15px;padding:4px 8px;background:rgba(180,68,70,0.06);border-radius:6px}
+    .highlight-phone{color:var(--soft-2);font-weight:800;font-size:15px;padding:4px 8px;background:rgba(223,217,216,0.08);border-radius:6px}
      .phone-button{background:var(--deep-1);color:var(--soft-2);padding:12px 18px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
 
     .social-inline{display:flex;gap:10px;align-items:center}
@@ -925,19 +925,14 @@
   </script>
 
   <script>
-    // Order via WhatsApp button handler with desktop fallback to WhatsApp Web
+    // Order via WhatsApp button handler - works on desktop and mobile
     (function(){
-      const phone = '923142304051'; // international format without plus
-      const message = encodeURIComponent('Assalamualaikum, I would like to order ${qty} x Whipped Tallow Body Butter (Price: Rs. 1,000) Quantity: 100ml. Please confirm. My Name is:');
+      const phone = '923142304051'; // international format without plus (+92 314 2304051)
+      const message = encodeURIComponent('Hi! I want to place an order for HGU Organics All-in-One Butter Balm.');
 
       function getUrl(){
-        // Simple mobile detection
-        const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-        if(isMobile){
-          return `https://wa.me/${phone}?text=${message}`;
-        }
-        // Desktop fallback to WhatsApp Web
-        return `https://web.whatsapp.com/send?phone=${phone}&text=${message}`;
+        // wa.me works on both desktop (opens web.whatsapp.com) and mobile (opens app)
+        return `https://wa.me/${phone}?text=${message}`;
       }
 
       // Attach to the new order button (if present)
@@ -946,7 +941,7 @@
         orderBtn.addEventListener('click', function(e){
           e.preventDefault();
           const url = getUrl();
-          // user click -> safe to open in new tab or navigate; use same-tab navigation for consistency
+          // user click -> safe to navigate; wa.me handles desktop and mobile
           window.location.href = url;
         });
       }

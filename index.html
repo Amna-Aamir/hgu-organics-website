@@ -704,14 +704,19 @@
     // keyboard accessibility for ESC
     document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
 
-    /* ========== Product Tab Functionality ========== */
+    /* ========== INITIALIZE ALL DOM-DEPENDENT CODE AFTER DOM LOADS ========== */
     document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.tab-btn').forEach(btn => {
+      
+      /* ========== Product Tab Functionality ========== */
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-          document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+          tabBtns.forEach(b => b.classList.remove('active'));
           document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
           btn.classList.add('active');
-          document.getElementById(btn.dataset.tab).classList.add('active');
+          const tabId = btn.getAttribute('data-tab');
+          const tabContent = document.getElementById(tabId);
+          if(tabContent) tabContent.classList.add('active');
         });
       });
 
@@ -719,36 +724,64 @@
       const faqs = document.querySelectorAll('.faq-item');
       faqs.forEach(item => {
         const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-          faqs.forEach(i => {
-            if (i !== item) i.classList.remove('open');
+        if(question) {
+          question.addEventListener('click', () => {
+            faqs.forEach(i => {
+              if (i !== item) i.classList.remove('open');
+            });
+            item.classList.toggle('open');
           });
-          item.classList.toggle('open');
-        });
-      });
-    });
-
-    /* ========== Newsletter Form Handling ========== */
-    const newsletterForm = document.getElementById('newsletterForm');
-    if(newsletterForm){
-      newsletterForm.addEventListener('submit', async function(e){
-        e.preventDefault();
-        const form = e.target;
-        const action = form.action;
-        const data = new FormData(form);
-        try{
-          const res = await fetch(action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
-          if(res.ok){
-            form.reset();
-            showCelebration('Welcome to Glow Club! Check your email for exclusive offers. 💌');
-          } else {
-            showCelebration('Subscription failed — please try again.');
-          }
-        }catch(err){
-          showCelebration('Network error — please try again.');
         }
       });
-    }
+      
+      /* ========== Newsletter Form Handling ========== */
+      const newsletterForm = document.getElementById('newsletterForm');
+      if(newsletterForm){
+        newsletterForm.addEventListener('submit', async function(e){
+          e.preventDefault();
+          const form = e.target;
+          const action = form.action;
+          const data = new FormData(form);
+          try{
+            const res = await fetch(action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+            if(res.ok){
+              form.reset();
+              showCelebration('Welcome to Glow Club! Check your email for exclusive offers. 💌');
+            } else {
+              showCelebration('Subscription failed — please try again.');
+            }
+          }catch(err){
+            showCelebration('Network error — please try again.');
+          }
+        });
+      }
+      
+      /* ========== Modal Order Form Handling ========== */
+      const orderForm = document.getElementById('orderForm');
+      if(orderForm){
+        orderForm.addEventListener('submit', async function(e){
+          e.preventDefault();
+          const form = e.target;
+          const action = form.action;
+          const data = new FormData(form);
+          try{
+            const res = await fetch(action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+            if(res.ok){
+              try{ closeModal(); }catch(e){}
+              form.reset();
+              showCelebration('Your order is completed! 🎉');
+            } else {
+              showCelebration('Order failed — please try again.');
+            }
+          }catch(err){
+            showCelebration('Network error — please try again.');
+          }
+        });
+      }
+      
+    });
+
+
 
     /* ========== Helpful check for Live Server path issues ==========
        If your images still do not appear, this will alert with instructions.
@@ -799,29 +832,7 @@
     setTimeout(()=>{ try{ overlay.remove(); }catch(e){} },4200);
   }
 
-  // Intercept the modal order form and submit via fetch, then show celebration
-  (function(){
-    const orderForm = document.getElementById('orderForm');
-    if(!orderForm) return;
-    orderForm.addEventListener('submit', async function(e){
-      e.preventDefault();
-      const form = e.target;
-      const action = form.action;
-      const data = new FormData(form);
-      try{
-        const res = await fetch(action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
-        if(res.ok){
-          try{ closeModal(); }catch(e){}
-          form.reset();
-          showCelebration('Your order is completed! 🎉');
-        } else {
-          showCelebration('Order failed — please try again.');
-        }
-      }catch(err){
-        showCelebration('Network error — please try again.');
-      }
-    });
-  })();
+
 
   </script>
 </body>

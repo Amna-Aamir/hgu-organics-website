@@ -129,25 +129,23 @@
     /* Short Description */
     .product-short-desc{color:var(--deep-1);line-height:1.7;margin:24px 0;font-size:15px;font-weight:500}
 
-    /* Tabs for Product Details */
-    .product-tabs{display:flex;gap:0;border-bottom:2px solid rgba(0,0,0,0.08);margin:32px 0 28px 0}
-    .product-tabs button{background:transparent;border:none;padding:14px 22px;font-weight:600;color:rgba(100,36,47,0.6);cursor:pointer;border-bottom:3px solid transparent;transition:all .3s ease}
-    .product-tabs button:hover{color:var(--deep-1)}
-    .product-tabs button.active{color:var(--accent);border-bottom-color:var(--accent)}
-    .tab-content{display:none;animation:fadeIn .3s ease}
-    .tab-content.active{display:block}
-    @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
-    .benefits-list{list-style:none;padding:0;margin:0}
-    .benefits-list li{padding:12px 16px;border-bottom:1px solid rgba(0,0,0,0.04);color:var(--deep-1);font-weight:500;background:rgba(255,255,255,0.5);border-radius:6px;margin-bottom:8px;line-height:1.6}
-    .benefits-list li:before{content:"✓ ";color:var(--accent);font-weight:800;margin-right:10px}
-
-    /* --- Tabs Styling (Additional) --- */
+    /* --- Tabs Styling --- */
     .tabs-container{margin-top:25px}
     .tab-buttons{display:flex;gap:12px;border-bottom:1px solid #ddd;padding-bottom:10px}
     .tab-btn{background:none;border:none;font-weight:700;padding:10px 14px;cursor:pointer;color:#64242F;opacity:0.7}
     .tab-btn.active{color:#B44446;border-bottom:3px solid #B44446;opacity:1}
     .tab-content{display:none;padding:20px 5px;line-height:1.6;color:#64242F}
     .tab-content.active{display:block}
+
+    /* Tabs for Product Details */
+    .product-tabs{display:flex;gap:0;border-bottom:2px solid rgba(0,0,0,0.08);margin:32px 0 28px 0}
+    .product-tabs button{background:transparent;border:none;padding:14px 22px;font-weight:600;color:rgba(100,36,47,0.6);cursor:pointer;border-bottom:3px solid transparent;transition:all .3s ease}
+    .product-tabs button:hover{color:var(--deep-1)}
+    .product-tabs button.active{color:var(--accent);border-bottom-color:var(--accent)}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+    .benefits-list{list-style:none;padding:0;margin:0}
+    .benefits-list li{padding:12px 16px;border-bottom:1px solid rgba(0,0,0,0.04);color:var(--deep-1);font-weight:500;background:rgba(255,255,255,0.5);border-radius:6px;margin-bottom:8px;line-height:1.6}
+    .benefits-list li:before{content:"✓ ";color:var(--accent);font-weight:800;margin-right:10px}
 
     /* --- FAQ Styling --- */
     .faq-item{margin-bottom:10px;border-bottom:1px solid #ddd;padding-bottom:8px}
@@ -367,6 +365,61 @@
         </ul>
       </div>
     </section>
+
+    <!-- New Tabs Container -->
+    <div class="tabs-container" style="background:var(--soft-1);border-radius:16px;padding:36px;margin:40px 0">
+      <div class="tab-buttons">
+        <button class="tab-btn active" data-target="#ingredients-new">Ingredients</button>
+        <button class="tab-btn" data-target="#benefits-new">Key Benefits</button>
+        <button class="tab-btn" data-target="#use-new">How to Use</button>
+        <button class="tab-btn" data-target="#love-new">Why You'll Love It</button>
+      </div>
+
+      <!-- INGREDIENTS -->
+      <div id="ingredients-new" class="tab-content active">
+        <strong>Ingredients (100% Natural):</strong><br><br>
+        Shea Butter, Apricot Kernel Oil, Beeswax, Sunflower Oil (Helianthus Annuus),<br>
+        Jojoba Oil, Mustard Seed Oil (Brassica Juncea), Vitamin E (Tocopherol),<br>
+        Natural Preservative.<br><br>
+        Quantity: <strong>50ml</strong>
+      </div>
+
+      <!-- BENEFITS -->
+      <div id="benefits-new" class="tab-content">
+        <strong>Key Benefits:</strong><br><br>
+        • Deep hydration for dry & flaky skin<br>
+        • Strengthens natural skin barrier<br>
+        • Calms irritation & redness<br>
+        • Perfect for slugging (overnight hydration boost)<br>
+        • Multi-purpose use — lips, elbows, heels, cuticles<br>
+        • Safe for babies, new moms & sensitive skin<br>
+        • Soft vanilla–caramel fragrance<br>
+      </div>
+
+      <!-- HOW TO USE -->
+      <div id="use-new" class="tab-content">
+        <strong>How to Use:</strong><br><br>
+        Warm a pea-sized amount between fingertips.<br>
+        Apply on clean skin and massage until absorbed.<br><br>
+        Suitable for:<br>
+        • Babies<br>
+        • New moms<br>
+        • Sensitive skin<br>
+        • Eczema and winter dryness<br>
+        • All skin & hair types<br><br>
+        <strong>Patch Test:</strong> Apply on a small area for 24 hours before full use.
+      </div>
+
+      <!-- WHY YOU'LL LOVE IT -->
+      <div id="love-new" class="tab-content">
+        <strong>Why You'll Love It:</strong><br><br>
+        • One balm for face, body, lips, heels & more<br>
+        • Fast-absorbing, non-greasy, and deeply nourishing<br>
+        • Made with clean, halal, chemical-free ingredients<br>
+        • Handcrafted in small batches for quality<br>
+        • Loved by moms, skincare beginners & dry-skin customers<br>
+      </div>
+    </div>
 
     <!-- Guarantee Banner -->
     <section class="guarantee-banner" aria-label="Guarantee">
@@ -857,9 +910,21 @@
     // ------- Tabs (data-target version) -------
     document.querySelectorAll(".tab-btn[data-target]").forEach(btn => {
       btn.addEventListener("click", () => {
-        document.querySelectorAll(".tab-btn[data-target]").forEach(b => b.classList.remove("active"));
+        // Remove active from all buttons in the same container
+        const container = btn.closest('.tab-buttons') || btn.closest('.tabs-container') || btn.closest('.product-tabs');
+        if(container) {
+          container.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+        } else {
+          document.querySelectorAll(".tab-btn[data-target]").forEach(b => b.classList.remove("active"));
+        }
+        
+        // Remove active from all tab content
         document.querySelectorAll(".tab-content").forEach(tc => tc.classList.remove("active"));
+        
+        // Add active to clicked button
         btn.classList.add("active");
+        
+        // Show matching content
         const target = document.querySelector(btn.dataset.target);
         if(target) target.classList.add("active");
       });

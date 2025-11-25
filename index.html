@@ -655,34 +655,46 @@
       item.addEventListener('keydown', e=> { if(e.key==='Enter' || e.key===' ') { e.preventDefault(); toggleInfo(item); }});
     });
 
-    /* ========== WhatsApp button action & color change ========== */
-    const waBtn = document.getElementById('waBtn');
-    if(waBtn){
-      waBtn.addEventListener('click', ()=>{
-        // visual feedback: change color to blush (#FC8F8F)
-        waBtn.style.background = 'var(--soft-1)';
-        waBtn.style.color = 'var(--deep-1)';
-        // open WhatsApp to your number (international format without +)
-        const phone = '923242926566';
-        const qty = 1;
-        const message = encodeURIComponent(`Assalamualaikum, I would like to order ${qty} x Whipped Tallow Body Butter (Price: Rs. 1,000) Quantity: 100ml. Please confirm. My Name is: `);
-        const url = `https://wa.me/${phone}?text=${message}`;
-        window.open(url, '_blank');
-      });
-    }
+    /* ========== WhatsApp button action & color change ==========
+       Consolidated handler: attach to any element with `.btn-whatsapp`
+       or the legacy IDs `waBtn` / `waBtn2`. Navigates with
+       `window.location.href` (same-tab) to avoid popup blocking.
+    */
+    (function(){
+      const phone = '923242926566'; // +92 324 2926566 (no plus for wa.me)
+      const defaultQty = 1;
 
-    // Duplicate WhatsApp button from enhanced product section
-    const waBtn2 = document.getElementById('waBtn2');
-    if(waBtn2){
-      waBtn2.addEventListener('click', ()=>{
-        // Open WhatsApp to the store number (international format without +)
-        const phone = '923242926566';
-        const qty = 1;
+      function openWhatsApp(qty){
         const message = encodeURIComponent(`Assalamualaikum, I would like to order ${qty} x Whipped Tallow Body Butter (Price: Rs. 1,000) Quantity: 100ml. Please confirm. My Name is: `);
         const url = `https://wa.me/${phone}?text=${message}`;
-        window.open(url, '_blank');
+        // Use same-tab navigation to avoid popup blockers
+        window.location.href = url;
+      }
+
+      // gather all whatsapp buttons (class preferred)
+      const waButtons = Array.from(document.querySelectorAll('.btn-whatsapp'));
+      // ensure legacy IDs are included if present
+      ['waBtn','waBtn2'].forEach(id => {
+        const el = document.getElementById(id);
+        if(el && waButtons.indexOf(el) === -1) waButtons.push(el);
       });
-    }
+
+      if(waButtons.length === 0){
+        console.warn('No WhatsApp Order buttons found (expected .btn-whatsapp or #waBtn/#waBtn2)');
+      }
+
+      waButtons.forEach(btn => {
+        btn.addEventListener('click', function(e){
+          e.preventDefault();
+          try{
+            btn.style.transition = 'background .18s, color .18s';
+            btn.style.background = 'var(--soft-1)';
+            btn.style.color = 'var(--deep-1)';
+          }catch(err){}
+          openWhatsApp(defaultQty);
+        });
+      });
+    })();
 
     /* ========== Form button: change color and show modal with Formspree form ======== */
     const formBtn = document.getElementById('formBtn');

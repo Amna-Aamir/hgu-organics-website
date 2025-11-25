@@ -106,6 +106,112 @@
     @keyframes confettiFall{0%{transform:translateY(-10vh) rotate(0deg);opacity:1}100%{transform:translateY(120vh) rotate(520deg);opacity:0.95}}
     .toast-fadeout{animation:toastFade .4s forwards}
     @keyframes toastFade{to{opacity:0;transform:scale(.98)}}
+
+    /* ========== Enhanced Product Page Styles ========== */
+    
+    /* Product Details Section */
+    .product-details{margin-top:40px;background:var(--white);color:var(--deep-1);border-radius:18px;padding:40px;box-shadow:0 12px 40px rgba(0,0,0,0.08)}
+    .product-header{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:36px}
+    .product-image-col{display:flex;align-items:center;justify-content:center}
+    .product-image-col img{max-width:100%;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.12)}
+    .product-info-col h1{font-family:'Playfair Display',serif;font-size:32px;margin:0 0 12px 0;color:var(--deep-1)}
+    .product-meta{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+    .stock-badge{background:rgba(100,36,47,0.08);color:var(--accent);padding:6px 14px;border-radius:20px;font-size:13px;font-weight:700}
+    .stock-badge.low-stock{background:rgba(252,143,143,0.15);color:#C85A5D}
+    .price-section{margin:24px 0;border-top:1px solid rgba(0,0,0,0.06);padding-top:16px}
+    .price-display{font-family:'Playfair Display',serif;font-size:28px;color:var(--accent);font-weight:700}
+    .quantity-info{color:rgba(100,36,47,0.7);font-size:14px;margin-top:6px}
+
+    /* Highlight Badges */
+    .highlight-badges{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
+    .badge-highlight{background:rgba(180,68,70,0.08);border:1px solid rgba(180,68,70,0.2);padding:8px 14px;border-radius:16px;font-size:13px;color:var(--accent);font-weight:600}
+
+    /* Short Description */
+    .product-short-desc{color:rgba(100,36,47,0.85);line-height:1.7;margin:24px 0;font-size:15px}
+
+    /* Tabs for Product Details */
+    .product-tabs{display:flex;gap:0;border-bottom:2px solid rgba(0,0,0,0.08);margin:32px 0 28px 0}
+    .product-tabs button{background:transparent;border:none;padding:14px 22px;font-weight:600;color:rgba(100,36,47,0.6);cursor:pointer;border-bottom:3px solid transparent;transition:all .3s ease}
+    .product-tabs button:hover{color:var(--deep-1)}
+    .product-tabs button.active{color:var(--accent);border-bottom-color:var(--accent)}
+    .tab-content{display:none;animation:fadeIn .3s ease}
+    .tab-content.active{display:block}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+    .benefits-list{list-style:none;padding:0;margin:0}
+    .benefits-list li{padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(100,36,47,0.8)}
+    .benefits-list li:before{content:"✓ ";color:var(--accent);font-weight:800;margin-right:10px}
+
+    /* Guarantee Banner */
+    .guarantee-banner{background:linear-gradient(135deg,var(--accent) 0%,rgba(180,68,70,0.85) 100%);color:var(--white);border-radius:16px;padding:28px;margin:40px 0;text-align:center;box-shadow:0 12px 30px rgba(180,68,70,0.15)}
+    .guarantee-banner h3{margin:0 0 10px 0;font-family:'Playfair Display',serif;font-size:22px;font-weight:700}
+    .guarantee-banner p{margin:0;font-size:15px;opacity:0.95}
+    .guarantee-icon{font-size:32px;margin-bottom:10px}
+
+    /* Customer Reviews Section */
+    .reviews-section{margin:40px 0;background:var(--soft-2);border-radius:16px;padding:36px}
+    .reviews-section h2{font-family:'Playfair Display',serif;font-size:24px;margin:0 0 28px 0;color:var(--deep-1)}
+    .review-item{background:var(--white);border-radius:12px;padding:20px;margin-bottom:16px;box-shadow:0 4px 12px rgba(0,0,0,0.06)}
+    .review-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+    .review-name{font-weight:700;color:var(--deep-1)}
+    .review-date{font-size:13px;color:rgba(100,36,47,0.6)}
+    .review-stars{color:var(--accent);font-size:16px;letter-spacing:2px}
+    .review-text{color:rgba(100,36,47,0.8);line-height:1.6;font-size:14px}
+
+    /* FAQ Section */
+    .faq-section{margin:40px 0;background:var(--white);border-radius:16px;padding:36px;border:1px solid rgba(0,0,0,0.06)}
+    .faq-section h2{font-family:'Playfair Display',serif;font-size:24px;margin:0 0 28px 0;color:var(--deep-1)}
+    .faq-item{border-bottom:1px solid rgba(0,0,0,0.06);margin-bottom:16px;padding-bottom:16px}
+    .faq-item:last-child{border:none;margin:0;padding:0}
+    .faq-question{cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;color:var(--deep-1);padding:12px 0;transition:color .3s ease}
+    .faq-question:hover{color:var(--accent)}
+    .faq-toggle{color:var(--accent);font-weight:800;transition:transform .3s ease}
+    .faq-toggle.open{transform:rotate(180deg)}
+    .faq-answer{display:none;color:rgba(100,36,47,0.8);line-height:1.6;margin-top:12px;font-size:14px;padding:12px 0}
+    .faq-answer.open{display:block}
+
+    /* Why Choose Us Cards */
+    .why-choose-section{margin:40px 0;background:var(--soft-2);border-radius:16px;padding:36px}
+    .why-choose-section h2{font-family:'Playfair Display',serif;font-size:24px;margin:0 0 28px 0;color:var(--deep-1)}
+    .why-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+    .why-card{background:var(--white);border-radius:12px;padding:24px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .3s ease,box-shadow .3s ease}
+    .why-card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,0.12)}
+    .why-card-icon{font-size:36px;margin-bottom:14px}
+    .why-card h4{font-family:'Playfair Display',serif;font-size:16px;margin:0 0 10px 0;color:var(--deep-1);font-weight:700}
+    .why-card p{color:rgba(100,36,47,0.7);font-size:13px;line-height:1.6;margin:0}
+
+    /* Policies Section */
+    .policies-section{margin:40px 0;background:var(--white);border-radius:16px;padding:36px;border:1px solid rgba(0,0,0,0.06)}
+    .policies-section h2{font-family:'Playfair Display',serif;font-size:24px;margin:0 0 28px 0;color:var(--deep-1)}
+    .policies-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+    .policy-item{background:rgba(180,68,70,0.04);border-radius:10px;padding:18px;text-align:center;border:1px solid rgba(180,68,70,0.1)}
+    .policy-item h4{margin:0 0 8px 0;color:var(--accent);font-weight:700;font-size:14px}
+    .policy-item p{margin:0;color:rgba(100,36,47,0.7);font-size:12px;line-height:1.5}
+
+    /* Newsletter Section */
+    .newsletter-section{margin:40px 0;background:linear-gradient(135deg,var(--deep-1) 0%,rgba(100,36,47,0.95) 100%);color:var(--white);border-radius:16px;padding:40px;text-align:center;box-shadow:0 12px 40px rgba(0,0,0,0.15)}
+    .newsletter-section h2{font-family:'Playfair Display',serif;font-size:24px;margin:0 0 12px 0;font-weight:700}
+    .newsletter-section p{color:rgba(255,255,255,0.85);margin:0 0 28px 0;font-size:15px;max-width:520px;margin-left:auto;margin-right:auto}
+    .newsletter-form{display:flex;gap:10px;max-width:480px;margin:0 auto;justify-content:center;flex-wrap:wrap}
+    .newsletter-form input{flex:1;min-width:240px;padding:12px 16px;border:none;border-radius:8px;background:var(--white);color:var(--deep-1);font-weight:500}
+    .newsletter-form input::placeholder{color:rgba(100,36,47,0.5)}
+    .newsletter-form button{padding:12px 24px;background:var(--accent);color:var(--white);border:none;border-radius:8px;font-weight:700;cursor:pointer;transition:background .3s ease}
+    .newsletter-form button:hover{background:rgba(180,68,70,0.85)}
+
+    /* Stock Alert */
+    .stock-alert{background:rgba(252,143,143,0.1);border-left:4px solid var(--soft-1);padding:14px 16px;border-radius:6px;margin:20px 0;color:rgba(100,36,47,0.85);font-size:14px}
+    .stock-alert strong{color:var(--accent)}
+
+    /* Responsive Grid */
+    @media(max-width:768px){
+      .product-header{grid-template-columns:1fr;gap:24px}
+      .product-details{padding:24px}
+      .why-cards{grid-template-columns:1fr}
+      .policies-grid{grid-template-columns:1fr}
+      .newsletter-form{flex-direction:column}
+      .newsletter-form input,.newsletter-form button{min-width:100%}
+      .product-tabs{flex-wrap:wrap}
+      .product-tabs button{padding:12px 16px;font-size:13px}
+    }
   </style>
 </head>
 <body>
@@ -165,6 +271,322 @@
         <button id="waBtn" class="btn btn-whatsapp" aria-label="Order via WhatsApp">Order via WhatsApp</button>
         <button id="formBtn" class="btn btn-form" aria-label="Order by Form">Order by Form</button>
       </div>
+    </section>
+
+    <!-- Enhanced Product Details Page -->
+    <section class="product-details" aria-label="Product Details">
+      <div class="product-header">
+        <div class="product-image-col">
+          <img src="assets/gemini.png" alt="Whipped Tallow Body Butter - Premium Skincare">
+        </div>
+        <div class="product-info-col">
+          <h1>Whipped Tallow Body Butter</h1>
+          
+          <div class="product-meta">
+            <span class="stock-badge low-stock">In Stock · Selling Fast</span>
+          </div>
+
+          <div class="stock-alert">
+            <strong>⏰ Hurry!</strong> Only 12 jars left in stock. Restock in 7 days.
+          </div>
+
+          <div class="price-section">
+            <div class="price-display">Rs. 1,000</div>
+            <div class="quantity-info">100ml premium formula</div>
+          </div>
+
+          <div class="highlight-badges">
+            <span class="badge-highlight">✓ All Skin Types</span>
+            <span class="badge-highlight">✓ Chemical Free</span>
+            <span class="badge-highlight">✓ Baby Safe</span>
+            <span class="badge-highlight">✓ Small Batch</span>
+            <span class="badge-highlight">✓ Handcrafted</span>
+            <span class="badge-highlight">✓ Cruelty Free</span>
+          </div>
+
+          <p class="product-short-desc">
+            Luxurious whipped body butter crafted with premium grass-fed tallow and nourishing butters. Deeply moisturizes, restores skin barrier, and leaves skin silky-soft within minutes. Ideal for all skin types, including sensitive and baby skin.
+          </p>
+
+          <div class="product-actions">
+            <button id="waBtn2" class="btn btn-whatsapp">Order via WhatsApp</button>
+            <button id="formBtn2" class="btn btn-form">Order by Form</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Tabs -->
+      <div class="product-tabs">
+        <button class="tab-btn active" data-tab="ingredients">Ingredients</button>
+        <button class="tab-btn" data-tab="benefits">Key Benefits</button>
+        <button class="tab-btn" data-tab="usage">How to Use</button>
+        <button class="tab-btn" data-tab="love">Why You'll Love It</button>
+      </div>
+
+      <div id="ingredients" class="tab-content active">
+        <h3 style="font-family:'Playfair Display',serif;color:var(--deep-1);margin-bottom:16px">Premium Ingredients</h3>
+        <ul class="benefits-list">
+          <li><strong>Grass-Fed Beef Tallow:</strong> Structurally similar to human sebum, rich in vitamins A, D, E & K. Locks moisture without clogging.</li>
+          <li><strong>Mango Butter:</strong> Lightweight, fast-absorbing, packed with antioxidants and vitamin C.</li>
+          <li><strong>Shea Butter:</strong> Deep hydration, natural anti-inflammatory properties.</li>
+          <li><strong>Cocoa Butter:</strong> Rich emollient, improves skin elasticity and firmness.</li>
+          <li><strong>Coconut Oil:</strong> Antimicrobial, supports skin barrier repair.</li>
+          <li><strong>Sweet Almond Oil:</strong> Soothes irritation, improves skin tone.</li>
+          <li><strong>Vitamin E:</strong> Powerful antioxidant, protects against environmental damage.</li>
+          <li><strong>Floral Infusions & Essential Oils:</strong> Lavender, rose, and chamomile for calming aromatherapy benefits (optional).</li>
+        </ul>
+      </div>
+
+      <div id="benefits" class="tab-content">
+        <h3 style="font-family:'Playfair Display',serif;color:var(--deep-1);margin-bottom:16px">Key Benefits</h3>
+        <ul class="benefits-list">
+          <li><strong>Deep Hydration:</strong> Locks moisture for up to 24 hours, visibly softer skin within minutes.</li>
+          <li><strong>Barrier Repair:</strong> Strengthens and repairs damaged skin barrier for long-term skin health.</li>
+          <li><strong>Anti-Inflammatory:</strong> Calms redness, soothes eczema and psoriasis.</li>
+          <li><strong>Anti-Aging:</strong> Reduces fine lines and wrinkles with nourishing vitamins.</li>
+          <li><strong>Safe for Sensitive Skin:</strong> Zero chemicals, zero irritants—perfect for eczema-prone skin.</li>
+          <li><strong>Baby-Safe Formula:</strong> Gentle enough for infant skin, no synthetic fragrances.</li>
+          <li><strong>Non-Greasy Finish:</strong> Whipped texture absorbs quickly without leaving residue.</li>
+          <li><strong>Aromatherapy Benefits:</strong> Calming floral notes promote relaxation and wellness.</li>
+        </ul>
+      </div>
+
+      <div id="usage" class="tab-content">
+        <h3 style="font-family:'Playfair Display',serif;color:var(--deep-1);margin-bottom:16px">How to Use</h3>
+        <ul class="benefits-list">
+          <li><strong>Best Time:</strong> Apply immediately after shower or bath while skin is still slightly damp.</li>
+          <li><strong>Amount:</strong> Start with a small amount (pea-sized for face, nickel-sized for body). A little goes a long way.</li>
+          <li><strong>Application:</strong> Gently massage into skin using circular motions until fully absorbed.</li>
+          <li><strong>Face:</strong> Use on face, neck, and décolletage 1-2 times daily.</li>
+          <li><strong>Body:</strong> Apply to entire body, focusing on dry areas like elbows, knees, and heels.</li>
+          <li><strong>Lips:</strong> Great as a nourishing lip balm—apply generous amount overnight.</li>
+          <li><strong>Baby Use:</strong> Perfect for baby massage and diaper rash prevention. Always patch test first.</li>
+          <li><strong>Storage:</strong> Keep in a cool, dry place. Whipped texture may firm up in cold weather—warm between palms before use.</li>
+        </ul>
+      </div>
+
+      <div id="love" class="tab-content">
+        <h3 style="font-family:'Playfair Display',serif;color:var(--deep-1);margin-bottom:16px">Why You'll Love It</h3>
+        <ul class="benefits-list">
+          <li><strong>Instant Results:</strong> Feel silky-soft skin within minutes of application.</li>
+          <li><strong>Luxury Texture:</strong> Cloud-like whipped formula feels decadent and pampering every time.</li>
+          <li><strong>Long-Lasting:</strong> One jar lasts 4-6 weeks with regular use. Excellent value.</li>
+          <li><strong>Handcrafted Quality:</strong> Small-batch production ensures premium consistency and purity.</li>
+          <li><strong>Ethical & Sustainable:</strong> Grass-fed tallow, ethical sourcing, compostable packaging.</li>
+          <li><strong>No Compromise:</strong> Zero parabens, sulfates, synthetic fragrances, or harmful chemicals.</li>
+          <li><strong>Multi-Use:</strong> Body, face, lips, and even a light hair treatment.</li>
+          <li><strong>Gift-Ready:</strong> Luxurious packaging makes it perfect for skincare lovers and conscious consumers.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Guarantee Banner -->
+    <section class="guarantee-banner" aria-label="Guarantee">
+      <div class="guarantee-icon">✨</div>
+      <h3>Quick Results Guaranteed</h3>
+      <p>See noticeably softer, hydrated skin within 3 days or your money back. We're confident you'll love it.</p>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section class="reviews-section" aria-label="Customer Reviews">
+      <h2>What Our Customers Say</h2>
+      
+      <div class="review-item">
+        <div class="review-header">
+          <div>
+            <div class="review-name">Ayesha Khan</div>
+            <div class="review-date">Verified Purchase • November 2025</div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-text">
+          "This is a game-changer! My skin has never felt this soft and hydrated. The whipped texture is so luxurious, and a little truly goes a long way. Highly recommend for anyone with sensitive skin!"
+        </div>
+      </div>
+
+      <div class="review-item">
+        <div class="review-header">
+          <div>
+            <div class="review-name">Fatima Ali</div>
+            <div class="review-date">Verified Purchase • November 2025</div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-text">
+          "Perfect for baby's eczema! Finally found something safe and effective. No weird smell, just natural goodness. Jar lasted 6 weeks with daily use. Worth every rupee."
+        </div>
+      </div>
+
+      <div class="review-item">
+        <div class="review-header">
+          <div>
+            <div class="review-name">Sara Malik</div>
+            <div class="review-date">Verified Purchase • October 2025</div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-text">
+          "Been using for 3 weeks and my eczema is almost gone! Skin feels hydrated, looks glowing. This is the only product that actually worked for me. Thank you, HGU Organics!"
+        </div>
+      </div>
+
+      <div class="review-item">
+        <div class="review-header">
+          <div>
+            <div class="review-name">Zainab Hassan</div>
+            <div class="review-date">Verified Purchase • October 2025</div>
+          </div>
+          <div class="review-stars">★★★★☆</div>
+        </div>
+        <div class="review-text">
+          "Lovely product! My only note is the jar size could be bigger, but the quality is top-notch. Using it for my whole body and face. No breakouts, just glowing skin."
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" aria-label="Frequently Asked Questions">
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Is this product suitable for all skin types?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          Yes! Our Whipped Tallow Body Butter is formulated for all skin types, including oily, combination, dry, and sensitive skin. Tallow is biocompatible with human skin and won't clog pores. If you have extremely oily skin, start with a small amount and adjust as needed.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can I use this on my face?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          Absolutely! Many customers use it as a facial moisturizer and love the results. Start with a pea-sized amount to avoid over-moisturizing. For best results, apply to damp skin immediately after cleansing.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Is it safe for babies and children?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          Yes, it's completely safe for babies and children. We formulated it with baby skin in mind—no harsh chemicals, synthetic fragrances, or irritants. Perfect for baby massage and diaper rash prevention. Always patch test first to check for individual sensitivities.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How long does one jar last?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          With regular daily use (whole body), one 100ml jar typically lasts 4-6 weeks. For face-only use, it can last 2-3 months. A little goes a long way, so start with a small amount!
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What if I'm allergic or it doesn't work for me?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          We offer a 30-day money-back guarantee. If you're not 100% satisfied, simply contact us for a full refund. However, we recommend patch testing on a small area first to check for individual sensitivities. Most customers see results within 3-7 days.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Is the tallow really from grass-fed beef?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          Yes! We source premium grass-fed beef tallow from ethical suppliers. Grass-fed tallow has superior nutrient content compared to grain-fed tallow. It's rich in vitamins A, D, E & K, and omega-3 fatty acids.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What's the shelf life and how should I store it?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          Our product is best used within 12 months of purchase. Store in a cool, dry place away from direct sunlight. Tallow naturally firms up in cold weather—warm the jar in your hands or use a warm spoon to soften it. Whipped texture is normal and may vary seasonally.
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-section" aria-label="Why Choose Us">
+      <h2>Why Choose HGU Organics?</h2>
+      
+      <div class="why-cards">
+        <div class="why-card">
+          <div class="why-card-icon">🌾</div>
+          <h4>100% Natural</h4>
+          <p>No synthetic chemicals, parabens, sulfates, or artificial fragrances. Just pure, organic ingredients.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-card-icon">👶</div>
+          <h4>Baby Safe</h4>
+          <p>Formulated with sensitive skin in mind. Perfect for newborns, toddlers, and anyone with eczema.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-card-icon">✋</div>
+          <h4>Handcrafted</h4>
+          <p>Small-batch production in Pakistan. Each jar is made with intention and carefully tested for quality.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-card-icon">🌍</div>
+          <h4>Ethically Sourced</h4>
+          <p>Grass-fed tallow, sustainable ingredients, and eco-friendly packaging. Conscious beauty at its best.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Policies Section -->
+    <section class="policies-section" aria-label="Policies">
+      <h2>Our Policies</h2>
+      
+      <div class="policies-grid">
+        <div class="policy-item">
+          <h4>🛡️ Refund Policy</h4>
+          <p>Not satisfied? Full refund within 30 days, no questions asked.</p>
+        </div>
+
+        <div class="policy-item">
+          <h4>🚚 Shipping Policy</h4>
+          <p>Fast, secure delivery across Pakistan. Free shipping on orders above Rs. 2,000.</p>
+        </div>
+
+        <div class="policy-item">
+          <h4>🔐 Privacy Policy</h4>
+          <p>Your data is safe with us. We never share your information with third parties.</p>
+        </div>
+
+        <div class="policy-item">
+          <h4>📋 Terms of Service</h4>
+          <p>Clear, customer-friendly terms. Read our full ToS on our website.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section" aria-label="Newsletter">
+      <h2>Join Our Glow Club</h2>
+      <p>Get exclusive skincare tips, early access to new products, and special discounts delivered straight to your inbox. Join 500+ happy customers!</p>
+      
+      <form class="newsletter-form" id="newsletterForm" action="https://formspree.io/f/mvgypweb" method="POST">
+        <input type="hidden" name="source" value="Newsletter - Glow Club">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <button type="submit">Join Glow Club</button>
+      </form>
     </section>
 
     <!-- contact -->
@@ -257,10 +679,24 @@
       // open WhatsApp to your number (international format without +)
       const phone = '923242926566';
       const qty = 1;
-      const message = encodeURIComponent(`Assalamualaikum, I would like to order ${qty} x Whipped Tallow Body Butter (Price: Rs. 1000). Please confirm. Name: `);
+      const message = encodeURIComponent(`Assalamualaikum, I would like to order ${qty} x Whipped Tallow Body Butter (Intro Rs. 750). Please confirm. Name: `);
       const url = `https://wa.me/${phone}?text=${message}`;
       window.open(url, '_blank');
     });
+
+    // Duplicate WhatsApp button from enhanced product section
+    const waBtn2 = document.getElementById('waBtn2');
+    if(waBtn2){
+      waBtn2.addEventListener('click', ()=>{
+        waBtn2.style.background = 'var(--soft-1)';
+        waBtn2.style.color = 'var(--deep-1)';
+        const phone = '923242926566';
+        const qty = 1;
+        const message = encodeURIComponent(`Assalamualaikum, I would like to order ${qty} x Whipped Tallow Body Butter (Intro Rs. 750). Please confirm. Name: `);
+        const url = `https://wa.me/${phone}?text=${message}`;
+        window.open(url, '_blank');
+      });
+    }
 
     /* ========== Form button: change color and show modal with Formspree form ======== */
     const formBtn = document.getElementById('formBtn');
@@ -272,6 +708,18 @@
       modal.style.display = 'flex';
       modal.setAttribute('aria-hidden','false');
     });
+    
+    // Duplicate form button from enhanced product section
+    const formBtn2 = document.getElementById('formBtn2');
+    if(formBtn2){
+      formBtn2.addEventListener('click', ()=>{
+        formBtn2.style.background = 'var(--soft-1)';
+        formBtn2.style.color = 'var(--deep-1)';
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden','false');
+      });
+    }
+    
     function closeModal(){ modal.style.display='none'; modal.setAttribute('aria-hidden','true'); }
 
     // close modal when clicking outside
@@ -279,6 +727,58 @@
 
     // keyboard accessibility for ESC
     document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
+
+    /* ========== Product Tab Functionality ========== */
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const tabName = button.getAttribute('data-tab');
+        
+        // Remove active class from all buttons and content
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+        
+        // Add active class to clicked button and corresponding content
+        button.classList.add('active');
+        document.getElementById(tabName).classList.add('active');
+      });
+    });
+
+    /* ========== FAQ Accordion Functionality ========== */
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        const faqItem = question.parentElement;
+        const answer = faqItem.querySelector('.faq-answer');
+        const toggle = question.querySelector('.faq-toggle');
+        
+        // Toggle active state
+        answer.classList.toggle('open');
+        toggle.classList.toggle('open');
+      });
+    });
+
+    /* ========== Newsletter Form Handling ========== */
+    const newsletterForm = document.getElementById('newsletterForm');
+    if(newsletterForm){
+      newsletterForm.addEventListener('submit', async function(e){
+        e.preventDefault();
+        const form = e.target;
+        const action = form.action;
+        const data = new FormData(form);
+        try{
+          const res = await fetch(action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+          if(res.ok){
+            form.reset();
+            showCelebration('Welcome to Glow Club! Check your email for exclusive offers. 💌');
+          } else {
+            showCelebration('Subscription failed — please try again.');
+          }
+        }catch(err){
+          showCelebration('Network error — please try again.');
+        }
+      });
+    }
 
     /* ========== Helpful check for Live Server path issues ==========
        If your images still do not appear, this will alert with instructions.

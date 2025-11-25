@@ -68,6 +68,8 @@
 
     .product-actions{display:flex;gap:12px;justify-content:center;margin-top:18px;flex-wrap:wrap}
     .btn{padding:12px 18px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    /* Make order buttons expand to the full available width of their column */
+    .product-actions .btn{flex:1;min-width:140px}
     .btn-whatsapp{background:var(--deep-1);color:var(--white)}
     .btn-form{background:var(--deep-1);color:var(--white)}
 
@@ -601,7 +603,7 @@
 
         <!-- phone and socials -->
         <div style="display:flex;flex-direction:column;gap:12px;align-items:center;min-width:220px">
-          <button id="callBtn" class="phone-button" onclick="location.href='tel:+923242926566'">Phone: <span class="highlight-phone" style="margin-left:6px">+92 324 2926566</span></button>
+          <button id="callBtn" class="phone-button" onclick="location.href='tel:+923142304051'">Phone: <span class="highlight-phone" style="margin-left:6px">03142304051</span></button>
 
           <div class="social-inline" style="margin-top:6px">
             <a href="https://www.instagram.com/hgu_organics/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="instagram" width="28"></a>
@@ -661,7 +663,7 @@
        `window.location.href` (same-tab) to avoid popup blocking.
     */
     (function(){
-      const phone = '923242926566'; // +92 324 2926566 (no plus for wa.me)
+      const phone = '923142304051'; // +92 314 2304051 (no plus for wa.me)
       const defaultQty = 1;
 
       function openWhatsApp(qty){

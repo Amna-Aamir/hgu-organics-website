@@ -127,7 +127,7 @@
     .badge-highlight{background:rgba(180,68,70,0.08);border:1px solid rgba(180,68,70,0.2);padding:8px 14px;border-radius:16px;font-size:13px;color:var(--accent);font-weight:600}
 
     /* Short Description */
-    .product-short-desc{color:rgba(100,36,47,0.85);line-height:1.7;margin:24px 0;font-size:15px}
+    .product-short-desc{color:var(--deep-1);line-height:1.7;margin:24px 0;font-size:15px;font-weight:500}
 
     /* Tabs for Product Details */
     .product-tabs{display:flex;gap:0;border-bottom:2px solid rgba(0,0,0,0.08);margin:32px 0 28px 0}
@@ -138,7 +138,7 @@
     .tab-content.active{display:block}
     @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
     .benefits-list{list-style:none;padding:0;margin:0}
-    .benefits-list li{padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.04);color:rgba(100,36,47,0.8)}
+    .benefits-list li{padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.04);color:var(--deep-1);font-weight:500}
     .benefits-list li:before{content:"✓ ";color:var(--accent);font-weight:800;margin-right:10px}
 
     /* Guarantee Banner */
@@ -148,44 +148,44 @@
     .guarantee-icon{font-size:32px;margin-bottom:10px}
 
     /* Customer Reviews Section */
-    .reviews-section{margin:40px 0;background:var(--soft-2);border-radius:16px;padding:36px}
-    .reviews-section h2{font-family:'Playfair Display',serif;font-size:24px;margin:0 0 28px 0;color:var(--deep-1)}
-    .review-item{background:var(--white);border-radius:12px;padding:20px;margin-bottom:16px;box-shadow:0 4px 12px rgba(0,0,0,0.06)}
+    .reviews-section{margin:40px 0;background:var(--deep-1);border-radius:16px;padding:36px}
+    .reviews-section h2{font-family:'Playfair Display',serif;font-size:24px;margin:0 0 28px 0;color:var(--soft-2)}
+    .review-item{background:var(--soft-2);border-radius:12px;padding:20px;margin-bottom:16px;box-shadow:0 4px 12px rgba(0,0,0,0.06)}
     .review-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
     .review-name{font-weight:700;color:var(--deep-1)}
     .review-date{font-size:13px;color:rgba(100,36,47,0.6)}
     .review-stars{color:var(--accent);font-size:16px;letter-spacing:2px}
-    .review-text{color:rgba(100,36,47,0.8);line-height:1.6;font-size:14px}
+    .review-text{color:var(--deep-1);line-height:1.6;font-size:14px;font-weight:500}
 
     /* FAQ Section */
-    .faq-section{margin:40px 0;background:var(--white);border-radius:16px;padding:36px;border:1px solid rgba(0,0,0,0.06)}
+    .faq-section{margin:40px 0;background:var(--soft-1);border-radius:16px;padding:36px;border:none}
     .faq-section h2{font-family:'Playfair Display',serif;font-size:24px;margin:0 0 28px 0;color:var(--deep-1)}
-    .faq-item{border-bottom:1px solid rgba(0,0,0,0.06);margin-bottom:16px;padding-bottom:16px}
+    .faq-item{border-bottom:1px solid rgba(100,36,47,0.15);margin-bottom:16px;padding-bottom:16px}
     .faq-item:last-child{border:none;margin:0;padding:0}
-    .faq-question{cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;color:var(--deep-1);padding:12px 0;transition:color .3s ease}
+    .faq-question{cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:700;color:var(--deep-1);padding:12px 0;transition:color .3s ease;font-size:15px}
     .faq-question:hover{color:var(--accent)}
     .faq-toggle{color:var(--accent);font-weight:800;transition:transform .3s ease}
     .faq-toggle.open{transform:rotate(180deg)}
-    .faq-answer{display:none;color:rgba(100,36,47,0.8);line-height:1.6;margin-top:12px;font-size:14px;padding:12px 0}
+    .faq-answer{display:none;color:var(--deep-1);line-height:1.6;margin-top:12px;font-size:14px;padding:12px 0;font-weight:500}
     .faq-answer.open{display:block}
 
     /* Why Choose Us Cards */
-    .why-choose-section{margin:40px 0;background:var(--soft-2);border-radius:16px;padding:36px}
-    .why-choose-section h2{font-family:'Playfair Display',serif;font-size:24px;margin:0 0 28px 0;color:var(--deep-1)}
+    .why-choose-section{margin:40px 0;background:var(--deep-1);border-radius:16px;padding:36px}
+    .why-choose-section h2{font-family:'Playfair Display',serif;font-size:24px;margin:0 0 28px 0;color:var(--soft-2)}
     .why-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-    .why-card{background:var(--white);border-radius:12px;padding:24px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .3s ease,box-shadow .3s ease}
+    .why-card{background:var(--soft-2);border-radius:12px;padding:24px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,0.08);transition:transform .3s ease,box-shadow .3s ease}
     .why-card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,0.12)}
     .why-card-icon{font-size:36px;margin-bottom:14px}
     .why-card h4{font-family:'Playfair Display',serif;font-size:16px;margin:0 0 10px 0;color:var(--deep-1);font-weight:700}
-    .why-card p{color:rgba(100,36,47,0.7);font-size:13px;line-height:1.6;margin:0}
+    .why-card p{color:var(--deep-1);font-size:13px;line-height:1.6;margin:0;font-weight:500}
 
     /* Policies Section */
-    .policies-section{margin:40px 0;background:var(--white);border-radius:16px;padding:36px;border:1px solid rgba(0,0,0,0.06)}
+    .policies-section{margin:40px 0;background:var(--soft-1);border-radius:16px;padding:36px;border:none}
     .policies-section h2{font-family:'Playfair Display',serif;font-size:24px;margin:0 0 28px 0;color:var(--deep-1)}
     .policies-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
-    .policy-item{background:rgba(180,68,70,0.04);border-radius:10px;padding:18px;text-align:center;border:1px solid rgba(180,68,70,0.1)}
-    .policy-item h4{margin:0 0 8px 0;color:var(--accent);font-weight:700;font-size:14px}
-    .policy-item p{margin:0;color:rgba(100,36,47,0.7);font-size:12px;line-height:1.5}
+    .policy-item{background:rgba(100,36,47,0.1);border-radius:10px;padding:18px;text-align:center;border:2px solid var(--accent)}
+    .policy-item h4{margin:0 0 8px 0;color:var(--deep-1);font-weight:700;font-size:14px}
+    .policy-item p{margin:0;color:var(--deep-1);font-size:12px;line-height:1.5;font-weight:500}
 
     /* Newsletter Section */
     .newsletter-section{margin:40px 0;background:linear-gradient(135deg,var(--deep-1) 0%,rgba(100,36,47,0.95) 100%);color:var(--white);border-radius:16px;padding:40px;text-align:center;box-shadow:0 12px 40px rgba(0,0,0,0.15)}
@@ -300,7 +300,7 @@
       </div>
 
       <div id="ingredients" class="tab-content active">
-        <h3 style="font-family:'Playfair Display',serif;color:var(--deep-1);margin-bottom:16px">Premium Ingredients</h3>
+        <h3 style="font-family:'Playfair Display',serif;color:var(--deep-1);margin-bottom:16px;font-weight:700;font-size:18px">Premium Ingredients</h3>
         <ul class="benefits-list">
           <li><strong>Grass-Fed Beef Tallow:</strong> Structurally similar to human sebum, rich in vitamins A, D, E & K. Locks moisture without clogging.</li>
           <li><strong>Mango Butter:</strong> Lightweight, fast-absorbing, packed with antioxidants and vitamin C.</li>
@@ -314,7 +314,7 @@
       </div>
 
       <div id="benefits" class="tab-content">
-        <h3 style="font-family:'Playfair Display',serif;color:var(--deep-1);margin-bottom:16px">Key Benefits</h3>
+        <h3 style="font-family:'Playfair Display',serif;color:var(--deep-1);margin-bottom:16px;font-weight:700;font-size:18px">Key Benefits</h3>
         <ul class="benefits-list">
           <li><strong>Deep Hydration:</strong> Locks moisture for up to 24 hours, visibly softer skin within minutes.</li>
           <li><strong>Barrier Repair:</strong> Strengthens and repairs damaged skin barrier for long-term skin health.</li>
@@ -328,7 +328,7 @@
       </div>
 
       <div id="usage" class="tab-content">
-        <h3 style="font-family:'Playfair Display',serif;color:var(--deep-1);margin-bottom:16px">How to Use</h3>
+        <h3 style="font-family:'Playfair Display',serif;color:var(--deep-1);margin-bottom:16px;font-weight:700;font-size:18px">How to Use</h3>
         <ul class="benefits-list">
           <li><strong>Best Time:</strong> Apply immediately after shower or bath while skin is still slightly damp.</li>
           <li><strong>Amount:</strong> Start with a small amount (pea-sized for face, nickel-sized for body). A little goes a long way.</li>
@@ -342,7 +342,7 @@
       </div>
 
       <div id="love" class="tab-content">
-        <h3 style="font-family:'Playfair Display',serif;color:var(--deep-1);margin-bottom:16px">Why You'll Love It</h3>
+        <h3 style="font-family:'Playfair Display',serif;color:var(--deep-1);margin-bottom:16px;font-weight:700;font-size:18px">Why You'll Love It</h3>
         <ul class="benefits-list">
           <li><strong>Instant Results:</strong> Feel silky-soft skin within minutes of application.</li>
           <li><strong>Luxury Texture:</strong> Cloud-like whipped formula feels decadent and pampering every time.</li>
@@ -648,17 +648,19 @@
 
     /* ========== WhatsApp button action & color change ========== */
     const waBtn = document.getElementById('waBtn');
-    waBtn.addEventListener('click', ()=>{
-      // visual feedback: change color to blush (#FC8F8F)
-      waBtn.style.background = 'var(--soft-1)';
-      waBtn.style.color = 'var(--deep-1)';
-      // open WhatsApp to your number (international format without +)
-      const phone = '923242926566';
-      const qty = 1;
-      const message = encodeURIComponent(`Assalamualaikum, I would like to order ${qty} x Whipped Tallow Body Butter (Intro Rs. 750). Please confirm. Name: `);
-      const url = `https://wa.me/${phone}?text=${message}`;
-      window.open(url, '_blank');
-    });
+    if(waBtn){
+      waBtn.addEventListener('click', ()=>{
+        // visual feedback: change color to blush (#FC8F8F)
+        waBtn.style.background = 'var(--soft-1)';
+        waBtn.style.color = 'var(--deep-1)';
+        // open WhatsApp to your number (international format without +)
+        const phone = '923242926566';
+        const qty = 1;
+        const message = encodeURIComponent(`Assalamualaikum, I would like to order ${qty} x Whipped Tallow Body Butter (Intro Rs. 750). Please confirm. Name: `);
+        const url = `https://wa.me/${phone}?text=${message}`;
+        window.open(url, '_blank');
+      });
+    }
 
     // Duplicate WhatsApp button from enhanced product section
     const waBtn2 = document.getElementById('waBtn2');
@@ -677,13 +679,15 @@
     /* ========== Form button: change color and show modal with Formspree form ======== */
     const formBtn = document.getElementById('formBtn');
     const modal = document.getElementById('modal');
-    formBtn.addEventListener('click', ()=>{
-      formBtn.style.background = 'var(--soft-1)'; // blush on click
-      formBtn.style.color = 'var(--deep-1)';
-      // show modal with Formspree order form
-      modal.style.display = 'flex';
-      modal.setAttribute('aria-hidden','false');
-    });
+    if(formBtn){
+      formBtn.addEventListener('click', ()=>{
+        formBtn.style.background = 'var(--soft-1)'; // blush on click
+        formBtn.style.color = 'var(--deep-1)';
+        // show modal with Formspree order form
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden','false');
+      });
+    }
     
     // Duplicate form button from enhanced product section
     const formBtn2 = document.getElementById('formBtn2');

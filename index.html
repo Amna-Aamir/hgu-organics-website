@@ -68,7 +68,7 @@
 
     .product-actions{display:flex;gap:12px;justify-content:center;margin-top:18px;flex-wrap:wrap}
     .btn{padding:12px 18px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
-    .btn-whatsapp{background:var(--accent);color:var(--white)}
+    .btn-whatsapp{background:var(--deep-1);color:var(--white)}
     .btn-form{background:var(--deep-1);color:var(--white)}
 
     /* Contact section: card must be #64242F; heading color #B44446; phone button background #DFD9D8 and phone text #B44446 */
@@ -304,8 +304,7 @@
           </p>
 
           <div class="product-actions">
-            <button id="waBtn2" class="btn btn-whatsapp">Order via WhatsApp</button>
-            <button id="formBtn2" class="btn btn-form">Order by Form</button>
+            <button id="waBtn2" class="btn btn-whatsapp">Order</button>
           </div>
         </div>
       </div>
@@ -666,7 +665,7 @@
         // open WhatsApp to your number (international format without +)
         const phone = '923242926566';
         const qty = 1;
-        const message = encodeURIComponent(`Assalamualaikum, I would like to order ${qty} x Whipped Tallow Body Butter (Intro Rs. 750). Please confirm. Name: `);
+        const message = encodeURIComponent(`Assalamualaikum, I would like to order ${qty} x Whipped Tallow Body Butter (Price: Rs. 1,000) Quantity: 100ml. Please confirm. My Name is: `);
         const url = `https://wa.me/${phone}?text=${message}`;
         window.open(url, '_blank');
       });
@@ -676,11 +675,10 @@
     const waBtn2 = document.getElementById('waBtn2');
     if(waBtn2){
       waBtn2.addEventListener('click', ()=>{
-        waBtn2.style.background = 'var(--soft-1)';
-        waBtn2.style.color = 'var(--deep-1)';
+        // Open WhatsApp to the store number (international format without +)
         const phone = '923242926566';
         const qty = 1;
-        const message = encodeURIComponent(`Assalamualaikum, I would like to order ${qty} x Whipped Tallow Body Butter (Intro Rs. 750). Please confirm. Name: `);
+        const message = encodeURIComponent(`Assalamualaikum, I would like to order ${qty} x Whipped Tallow Body Butter (Price: Rs. 1,000) Quantity: 100ml. Please confirm. My Name is: `);
         const url = `https://wa.me/${phone}?text=${message}`;
         window.open(url, '_blank');
       });
@@ -699,16 +697,6 @@
       });
     }
     
-    // Duplicate form button from enhanced product section
-    const formBtn2 = document.getElementById('formBtn2');
-    if(formBtn2){
-      formBtn2.addEventListener('click', ()=>{
-        formBtn2.style.background = 'var(--soft-1)';
-        formBtn2.style.color = 'var(--deep-1)';
-        modal.style.display = 'flex';
-        modal.setAttribute('aria-hidden','false');
-      });
-    }
     
     function closeModal(){ modal.style.display='none'; modal.setAttribute('aria-hidden','true'); }
 

@@ -314,11 +314,7 @@
             Luxurious whipped body butter crafted with premium grass-fed tallow and nourishing butters. Deeply moisturizes, restores skin barrier, and leaves skin silky-soft within minutes. Ideal for all skin types, including sensitive and baby skin.
           </p>
 
-          <div class="product-actions">
-            <button id="waBtn2" class="btn btn-whatsapp">Order</button>
-          </div>
-
-          <!-- Responsive Order via WhatsApp Section -->
+          <!-- Order via WhatsApp Button -->
           <div id="orderSection" aria-label="Order via WhatsApp">
             <div class="order-wrapper">
               <button id="orderWhatsAppBtn" type="button" class="order-whatsapp-btn" aria-label="Order via WhatsApp">
@@ -928,7 +924,7 @@
     // Order via WhatsApp button handler - works on desktop and mobile
     (function(){
       const phone = '923142304051'; // international format without plus (+92 314 2304051)
-      const message = encodeURIComponent('Hi! I want to place an order for HGU Organics All-in-One Butter Balm.');
+      const message = encodeURIComponent('Assalamualaikum, I would like to order ${qty} x Whipped Tallow Body Butter (Price: Rs. 1,000) Quantity: 100ml. Please confirm.My Name is:');
 
       function getUrl(){
         // wa.me works on both desktop (opens web.whatsapp.com) and mobile (opens app)

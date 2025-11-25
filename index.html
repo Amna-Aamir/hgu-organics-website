@@ -138,7 +138,7 @@
     .tab-content.active{display:block}
     @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
     .benefits-list{list-style:none;padding:0;margin:0}
-    .benefits-list li{padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.04);color:var(--deep-1);font-weight:500}
+    .benefits-list li{padding:12px 16px;border-bottom:1px solid rgba(0,0,0,0.04);color:var(--deep-1);font-weight:500;background:rgba(255,255,255,0.5);border-radius:6px;margin-bottom:8px;line-height:1.6}
     .benefits-list li:before{content:"✓ ";color:var(--accent);font-weight:800;margin-right:10px}
 
     /* Guarantee Banner */
@@ -705,51 +705,76 @@
     document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
 
     /* ========== Product Tab Functionality ========== */
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const tabName = button.getAttribute('data-tab');
-        
-        // Remove active class from all buttons and content
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-        
-        // Add active class to clicked button and corresponding content
-        button.classList.add('active');
-        document.getElementById(tabName).classList.add('active');
-      });
-    });
-
-    /* ========== FAQ Accordion Functionality ========== */
-    function initializeFAQ() {
-      const faqQuestions = document.querySelectorAll('.faq-question');
-      faqQuestions.forEach(question => {
-        question.addEventListener('click', function(e) {
+    function initializeTabs() {
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      tabButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
           e.preventDefault();
-          const faqItem = this.parentElement;
-          const answer = faqItem.querySelector('.faq-answer');
-          const toggle = this.querySelector('.faq-toggle');
+          const tabName = this.getAttribute('data-tab');
           
-          // Close other open answers
-          document.querySelectorAll('.faq-answer.open').forEach(openAnswer => {
-            if(openAnswer !== answer) {
-              openAnswer.classList.remove('open');
-              openAnswer.parentElement.querySelector('.faq-toggle').classList.remove('open');
-            }
-          });
+          // Remove active class from all buttons and contents
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          tabContents.forEach(content => content.classList.remove('active'));
           
-          // Toggle current answer
-          answer.classList.toggle('open');
-          toggle.classList.toggle('open');
+          // Add active class to clicked button and corresponding content
+          this.classList.add('active');
+          const activeTab = document.getElementById(tabName);
+          if(activeTab) {
+            activeTab.classList.add('active');
+          }
         });
       });
     }
     
-    // Initialize FAQ when DOM is ready
+    // Initialize tabs when DOM is ready
+    if(document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeTabs);
+    } else {
+      initializeTabs();
+    }
+
+    /* ========== FAQ Accordion Functionality ========== */
+    function initializeFAQ() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        
+        if(question && answer) {
+          question.style.cursor = 'pointer';
+          question.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            // Close all other open answers
+            faqItems.forEach(otherItem => {
+              if(otherItem !== item) {
+                const otherAnswer = otherItem.querySelector('.faq-answer');
+                const otherToggle = otherItem.querySelector('.faq-toggle');
+                if(otherAnswer && otherToggle) {
+                  otherAnswer.classList.remove('open');
+                  otherToggle.classList.remove('open');
+                }
+              }
+            });
+            
+            // Toggle current answer
+            const toggle = this.querySelector('.faq-toggle');
+            answer.classList.toggle('open');
+            if(toggle) {
+              toggle.classList.toggle('open');
+            }
+          });
+        }
+      });
+    }
+    
+    // Initialize FAQ immediately and on DOMContentLoaded
+    initializeFAQ();
     if(document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', initializeFAQ);
-    } else {
-      initializeFAQ();
     }
 
     /* ========== Newsletter Form Handling ========== */

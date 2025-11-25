@@ -214,6 +214,8 @@
     }
   </style>
 </head>
+
+
 <body>
   <div class="wrap">
 
@@ -832,9 +834,34 @@
     setTimeout(()=>{ try{ overlay.remove(); }catch(e){} },4200);
   }
 
-
-
   </script>
+
+  <!-- WORKING TABS SCRIPT -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    
+    const tabs = document.querySelectorAll(".tab-btn");
+    const contents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+
+        // Remove active from all
+        tabs.forEach((t) => t.classList.remove("active"));
+        contents.forEach((c) => c.classList.remove("active"));
+
+        // Add active to clicked tab
+        tab.classList.add("active");
+
+        // Show matching content
+        const target = document.querySelector(tab.dataset.target);
+        if(target) target.classList.add("active");
+      });
+    });
+
+  });
+  </script>
+
 </body>
 </html>
 

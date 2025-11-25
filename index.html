@@ -73,6 +73,15 @@
     .btn-whatsapp{background:var(--deep-1);color:var(--white)}
     .btn-form{background:var(--deep-1);color:var(--white)}
 
+    /* Order section styles */
+    #orderSection{margin:22px 0;padding:8px;border-radius:12px;background:transparent;display:flex;justify-content:center}
+    .order-wrapper{width:100%;max-width:520px}
+    .order-whatsapp-btn{display:flex;align-items:center;gap:12px;justify-content:center;width:100%;padding:14px 18px;border-radius:12px;border:0;cursor:pointer;font-weight:800;background:var(--deep-1);color:var(--white);box-shadow:0 8px 22px rgba(0,0,0,0.12);transition:transform .12s ease,filter .12s ease,box-shadow .12s ease}
+    .order-whatsapp-btn svg{width:20px;height:20px;flex:0 0 20px}
+    .order-whatsapp-btn:hover{filter:brightness(.94)} /* darken by ~6% */
+    .order-whatsapp-btn:active{transform:scale(.97)}
+    @media(min-width:900px){ .order-wrapper{max-width:420px} }
+
     /* Contact section: card must be #64242F; heading color #B44446; phone button background #DFD9D8 and phone text #B44446 */
      .contact-wrap{margin-top:40px;padding:28px;border-radius:14px;background:var(--deep-1);color:var(--white);display:flex;flex-direction:column;align-items:center;gap:14px}
     .contact-wrap h3{color:var(--soft-2);margin:0;font-family:'Playfair Display',serif;font-size:30px;font-weight:800}
@@ -307,6 +316,20 @@
 
           <div class="product-actions">
             <button id="waBtn2" class="btn btn-whatsapp">Order</button>
+          </div>
+
+          <!-- Responsive Order via WhatsApp Section -->
+          <div id="orderSection" aria-label="Order via WhatsApp">
+            <div class="order-wrapper">
+              <button id="orderWhatsAppBtn" type="button" class="order-whatsapp-btn" aria-label="Order via WhatsApp">
+                <!-- Simple WhatsApp icon (inline SVG) -->
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M20.52 3.48A11.92 11.92 0 0012 0C5.373 0 .02 5.353.02 12c0 2.112.55 4.182 1.594 6.01L0 24l6.169-1.61A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12 0-3.2-1.25-6.18-3.48-8.52z" fill="#25D366"/>
+                  <path d="M17.6 14.2c-.3-.15-1.77-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.34.22-.63.07-.3-.15-1.13-.42-2.15-1.33-.8-.7-1.34-1.57-1.5-1.86-.15-.28-.02-.43.12-.58.12-.12.28-.33.42-.5.14-.17.18-.28.27-.46.09-.18.04-.34-.02-.48-.07-.15-.68-1.65-.93-2.26-.24-.59-.48-.51-.68-.52l-.58-.01c-.2 0-.52.07-.8.34-.28.27-1.07 1.04-1.07 2.54 0 1.5 1.1 2.94 1.25 3.15.15.2 2.16 3.3 5.24 4.63 3.08 1.33 3.08.89 3.64.83.56-.06 1.77-.72 2.02-1.41.25-.69.25-1.28.175-1.41-.07-.12-.26-.2-.56-.35z" fill="#fff"/>
+                </svg>
+                <span>Order via WhatsApp</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -899,6 +922,35 @@
     });
     
   });
+  </script>
+
+  <script>
+    // Order via WhatsApp button handler with desktop fallback to WhatsApp Web
+    (function(){
+      const phone = '923142304051'; // international format without plus
+      const message = encodeURIComponent('Assalamualaikum, I would like to order ${qty} x Whipped Tallow Body Butter (Price: Rs. 1,000) Quantity: 100ml. Please confirm. My Name is:');
+
+      function getUrl(){
+        // Simple mobile detection
+        const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        if(isMobile){
+          return `https://wa.me/${phone}?text=${message}`;
+        }
+        // Desktop fallback to WhatsApp Web
+        return `https://web.whatsapp.com/send?phone=${phone}&text=${message}`;
+      }
+
+      // Attach to the new order button (if present)
+      const orderBtn = document.getElementById('orderWhatsAppBtn');
+      if(orderBtn){
+        orderBtn.addEventListener('click', function(e){
+          e.preventDefault();
+          const url = getUrl();
+          // user click -> safe to open in new tab or navigate; use same-tab navigation for consistency
+          window.location.href = url;
+        });
+      }
+    })();
   </script>
 
 </body>

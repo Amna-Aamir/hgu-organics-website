@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hgu-organics.vercel.app/sitemap.xml

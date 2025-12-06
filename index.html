@@ -19,7 +19,7 @@
   <meta property="og:type" content="product">
   <meta property="og:title" content="HGU Organics — Whipped Tallow Body Butter">
   <meta property="og:description" content="Handcrafted halal tallow cream for dry, sensitive & baby skin. Deeply nourishing and chemical-free.">
-  <meta property="og:image" content="https://hgu-organics.vercel.app/assets/gemini.png">
+  <meta property="og:image" content="https://hgu-organics.vercel.app/assets/gemini.webp">
   <meta property="og:url" content="https://hgu-organics.vercel.app/">
   <meta property="og:site_name" content="HGU Organics">
 
@@ -27,7 +27,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="HGU Organics — Whipped Tallow Body Butter">
   <meta name="twitter:description" content="Handcrafted halal tallow cream for dry, sensitive & baby skin.">
-  <meta name="twitter:image" content="https://hgu-organics.vercel.app/assets/gemini.png">
+  <meta name="twitter:image" content="https://hgu-organics.vercel.app/assets/gemini.webp">
 
   <!-- Product JSON-LD Structured Data (for Google Rich Results) -->
   <script type="application/ld+json">
@@ -36,7 +36,7 @@
     "@type": "Product",
     "name": "Whipped Tallow Body Butter",
     "image": [
-      "https://hgu-organics.vercel.app/assets/gemini.png"
+      "https://hgu-organics.vercel.app/assets/gemini.webp"
     ],
     "description": "100% natural whipped tallow body butter. Halal, handcrafted, baby-safe. Deeply nourishing for dry & sensitive skin.",
     "sku": "HGU-WTB-100",
@@ -167,6 +167,12 @@
     .product-header{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:36px}
     .product-image-col{display:flex;align-items:center;justify-content:center}
     .product-image-col img{max-width:100%;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.12)}
+    /* Jar with logo overlays */
+    .jar{position:relative;display:inline-flex;align-items:center;justify-content:center;max-width:320px;width:100%}
+    .jar .product{max-width:100%;width:100%;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.12)}
+    .jar .label{position:absolute;opacity:0.85}
+    .jar .label-top{top:8%;left:50%;transform:translateX(-50%);width:35%;max-width:80px}
+    .jar .label-front{bottom:20%;left:50%;transform:translateX(-50%);width:45%;max-width:110px}
     .product-info-col h1{font-family:'Playfair Display',serif;font-size:32px;margin:0 0 12px 0;color:var(--deep-1)}
     .product-meta{display:flex;align-items:center;gap:16px;margin-bottom:18px}
     .stock-badge{background:rgba(100,36,47,0.08);color:var(--accent);padding:6px 14px;border-radius:20px;font-size:13px;font-weight:700}
@@ -324,14 +330,19 @@
     <section class="product-details" aria-label="Product Details">
       <div class="product-header">
         <div class="product-image-col">
-          <picture>
-            <source srcset="assets/whipped-tallow-jar.webp" type="image/webp">
-            <img 
-              src="assets/whipped-tallow-jar.png" 
-              alt="Jar of HGU Organics whipped tallow body butter with pink label" 
-              onerror="this.style.opacity=0.45;" 
-              loading="lazy">
-          </picture>
+          <div class="jar" role="img" aria-label="Jar of HGU Organics Whipped Tallow Body Butter">
+            <picture>
+              <source srcset="assets/whipped-tallow-jar.webp" type="image/webp">
+              <img 
+                class="product" 
+                src="assets/whipped-tallow-jar.webp" 
+                alt="HGU Organics whipped tallow body butter jar" 
+                onerror="this.style.opacity=0.45;" 
+                loading="lazy">
+            </picture>
+            <img class="label label-top" src="assets/logo.png" alt="HGU logo on jar lid" onerror="this.style.opacity=0.6;" loading="lazy">
+            <img class="label label-front" src="assets/logo.png" alt="HGU logo on jar body label" onerror="this.style.opacity=0.6;" loading="lazy">
+          </div>
         </div>
         <div class="product-info-col">
           <h1>Whipped Tallow Body Butter</h1>
@@ -715,7 +726,7 @@
       });
     }
     checkImage(document.getElementById('logoImg'), 'assets/logo.png');
-    checkImage(document.getElementById('prodImg'), 'assets/gemini.png');
+    checkImage(document.getElementById('prodImg'), 'assets/gemini.webp');
 
     /* ========== info toggle ========== */
     function toggleInfo(el){
@@ -880,8 +891,8 @@
           alert('Image load error: logo.png not found. Put logo.png inside HGU-Organics/assets/ and run Live Server from HGU-Organics folder.');
         }
         if(prod && prod.naturalWidth === 0){
-          console.error('Product image failed to load: confirm file exists at: HGU-Organics/assets/gemini.png');
-          alert('Image load error: gemini.png not found. Put gemini.png inside HGU-Organics/assets/ and run Live Server from HGU-Organics folder.');
+          console.error('Product image failed to load: confirm file exists at: HGU-Organics/assets/gemini.webp');
+          alert('Image load error: gemini.webp not found. Put gemini.webp inside HGU-Organics/assets/ and run Live Server from HGU-Organics folder.');
         }
       },450);
     });

@@ -386,9 +386,12 @@ src="https://www.facebook.com/tr?id=1559607368421855&ev=PageView&noscript=1"
           </div>
 
           <div class="price-section" style="border-top-color:var(--accent)">
-            <div class="price-display" style="color:var(--accent);font-size:36px">Rs. 899</div>
-            <div style="background:rgba(180,68,70,0.15);color:var(--accent);padding:8px 12px;border-radius:8px;font-weight:700;font-size:13px;margin:10px 0;text-align:center;border-left:4px solid var(--accent)">Valid till only on 5 Jan 2026</div>
-            <div class="quantity-info" style="color:var(--deep-1);font-weight:700;font-size:15px">100ml premium formula</div>
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+              <span style="color:var(--accent);font-size:24px;text-decoration:line-through;font-weight:600">Rs. 1,000</span>
+              <span style="color:#000;font-size:36px;font-weight:900;background:#FFD700;padding:4px 12px;border-radius:8px;display:inline-block">Rs. 899</span>
+            </div>
+            <div style="background:#000;color:#000;padding:8px 12px;border-radius:8px;font-weight:900;font-size:13px;margin:10px 0;text-align:center;border-left:4px solid #000;color:#fff;background:rgba(0,0,0,0.85)">Valid till only on 5 Jan 2026</div>
+            <div class="quantity-info" style="color:var(--deep-1);font-weight:700;font-size:15px;margin-top:12px">100ml premium formula</div>
             <strong>Free Shipping on Orders Over Rs. 2,000</strong>
           </div>
 
@@ -839,7 +842,7 @@ src="https://www.facebook.com/tr?id=1559607368421855&ev=PageView&noscript=1"
       const defaultQty = 1;
 
       function openWhatsApp(qty){
-        const message = encodeURIComponent(`Assalamualaikum, I would like to order ${qty} x Whipped Tallow Body Butter (Price: Rs. 1,000) Quantity: 100ml. Please confirm. My Name is: `);
+        const message = encodeURIComponent(`Assalamualaikum, I would like to order ${qty} x Whipped Tallow Body Butter (Price: Rs. 899) Quantity: 100ml. Please confirm. My Name is: `);
         const url = `https://wa.me/${phone}?text=${message}`;
         // Use same-tab navigation to avoid popup blockers
         window.location.href = url;
@@ -1034,7 +1037,7 @@ src="https://www.facebook.com/tr?id=1559607368421855&ev=PageView&noscript=1"
       const defaultQty = 1;
 
       function openWhatsApp(qty){
-        const message = encodeURIComponent(`Assalamualaikum, I would like to order ${qty} x Whipped Tallow Body Butter (Price: Rs. 1,000) Quantity: 100ml. Please confirm. My Name is: `);
+        const message = encodeURIComponent(`Assalamualaikum, I would like to order ${qty} x Whipped Tallow Body Butter (Price: Rs. 899) Quantity: 100ml. Please confirm. My Name is: `);
         const url = `https://wa.me/${phone}?text=${message}`;
         // Use same-tab navigation to avoid popup blockers
         window.location.href = url;
@@ -1121,7 +1124,7 @@ src="https://www.facebook.com/tr?id=1559607368421855&ev=PageView&noscript=1"
     // Order via WhatsApp button handler - works on desktop and mobile
     (function(){
       const phone = '923142304051'; // international format without plus (+92 314 2304051)
-      const message = encodeURIComponent(`Assalamualaikum, I would like to order 1 x Whipped Tallow Body Butter (Price: Rs. 1,000) Quantity: 100ml. Please confirm. My Name is:`);
+      const message = encodeURIComponent(`Assalamualaikum, I would like to order 1 x Whipped Tallow Body Butter (Price: Rs. 899) Quantity: 100ml. Please confirm. My Name is:`);
 
       function getUrl(){
         // wa.me works on both desktop (opens web.whatsapp.com) and mobile (opens app)
